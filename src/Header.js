@@ -1,14 +1,18 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
+import './header.css'
 import MenuIcon from './images/three.svg'
 
 export const Header = (props) => {
-    const { mobileView } = props
-    const [menuOpen, setMenuOpen] = useState(false);
+    const { mobileView, setMenuOpen, menuOpen } = props
     
     const menuToggle = () => {
         setMenuOpen(!menuOpen);
     }
+
+    useEffect(() => {
+        setMenuOpen(false)
+    }, [])
 
     return (
         <>
@@ -18,9 +22,10 @@ export const Header = (props) => {
                     <img src={MenuIcon} onClick={() => menuToggle()}/>
                     {menuOpen === true &&
                         <div className="overlay">
-                            <div id='my-links'>
+                            <div id='mobile-links'>
                                 <Link className='mobile-link' to='/'>Home</Link>
                                 <Link className='mobile-link' to='/projects'>Projects</Link>
+                                <Link className='mobile-link' to='/resume'>Resume</Link>
                                 <Link className='mobile-link' to='/contact'>Contact</Link>
                             </div>
                         </div>
@@ -30,10 +35,11 @@ export const Header = (props) => {
             {mobileView === false && 
                 <header id='topnav'>
                     <div id='header-name'>Tyler Randall</div>
-                        <div id='my-links'>
-                            <Link className='mobile-link' to='/'>Home</Link>
-                            <Link className='mobile-link' to='/projects'>Projects</Link>
-                            <Link className='mobile-link' to='/contact'>Contact</Link>
+                        <div id='desktop-links'>
+                            <Link className='desktop-link border' to='/'>Home</Link>
+                            <Link className='desktop-link border' to='/projects'>Projects</Link>
+                            <Link className='desktop-link border' to='/resume'>Resume</Link> 
+                            <Link className='desktop-link' to='/contact'>Contact</Link>
                         </div>
                 </header>
             }

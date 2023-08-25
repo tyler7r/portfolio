@@ -1,15 +1,18 @@
 import React, { useEffect, useState } from 'react'
 import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
 import { Header } from './Header';
+import { Footer } from './Footer';
 import { Home } from './Home';
 import { Contact } from './Contact';
 import { Projects } from './Projects';
+import { Resume } from './Resume';
 
 function App() {
   const [mobileView, setMobileView] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false)
 
   const handleResize = () => {
-    if (window.innerWidth >= 480) {
+    if (window.innerWidth >= 481) {
       setMobileView(false)
     } else {
       setMobileView(true);
@@ -17,7 +20,11 @@ function App() {
   }
 
   useEffect(() => {
-    if (window.innerWidth <= 480) {
+    setMenuOpen(false)
+  }, [mobileView])
+
+  useEffect(() => {
+    if (window.innerWidth <= 481) {
       setMobileView(true)
     }
   }, [])
@@ -32,12 +39,14 @@ function App() {
   return (
       <BrowserRouter>
         <div className="App">
-          <Header mobileView={mobileView}/>
+          <Header mobileView={mobileView} menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
           <Routes>
             <Route path='/' element={<Home mobileView={mobileView} />} />
             <Route path='/projects' element={<Projects />} />
+            <Route path='/resume' element={<Resume />} />
             <Route path='/contact' element={<Contact />} />
           </Routes>
+          <Footer />
         </div> 
       </BrowserRouter>
   );

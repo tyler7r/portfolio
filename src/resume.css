@@ -1,0 +1,18 @@
+#resume-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 24px;
+    padding: 24px;
+}
+
+#resume-title {
+    font-size: 36px;
+    align-self: flex-start;
+}
+
+#resume-preview {
+    height: 100%;
+    width: 100%;
+}

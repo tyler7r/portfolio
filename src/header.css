@@ -1,0 +1,32 @@
+#topnav {
+    display: flex;
+    justify-content: space-between;
+    margin: 8px 12px 0px 12px;
+}
+
+#header-name {
+    font-size: 32px;
+    font-weight: bold;
+}
+
+#desktop-links {
+    display: flex;
+    gap: 8px;
+    justify-content: center;
+    align-items: center;
+}
+
+.desktop-link {
+    text-decoration: none;
+    color: black;
+    transition: color 0.3s;
+}
+
+.desktop-link:hover {
+    color: orange;
+}
+
+.desktop-link.border {
+    border-right: 1px solid lightgray;
+    padding-right: 8px;
+}
