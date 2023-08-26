@@ -8,11 +8,11 @@ export const Home = (props) => {
 
     useEffect(() => {
         const possibleGreetings = [
-            'Hello', 'Hola', 'Bonjour', 'Ciao', 'Olá', "G'day", 'Geia', 'Zdravo', 'Privet', 'Nǐ hǎo', "Kon’nichiwa", 'Guten tag'
+            'Hello', 'Hola', 'Bonjour', 'Ciao', 'Olá', "G'day", 'Geia', 'Zdravo', 'Privet', 'Nǐ hǎo'
         ]
 
         const randomGreeting = () => {
-            const randomNum = Math.floor(Math.random() * 12);
+            const randomNum = Math.floor(Math.random() * 10);
             setGreeting(possibleGreetings[randomNum])
         }
 
