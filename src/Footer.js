@@ -23,9 +23,9 @@ export const Footer = (props) => {
             <div className='contact-container' id='follow-me-container'>
                 <div className='contact-title'>Follow Me</div>
                 <div id="media-btns-container">
-                    <Link to='https://github.com/tyler7r?tab=repositories' className='media-btn'><img src={GithubIcon} /></Link>
-                    <Link to='https://www.linkedin.com/in/tyler-randall-496828289' className='media-btn'><img src={LinkedinIcon} /></Link>
-                    <Link to='https://www.instagram.com/tyler7randall/' className='media-btn'><img src={InstagramIcon} /></Link>
+                    <Link to='https://github.com/tyler7r?tab=repositories' className='media-btn'><img src={GithubIcon} alt='github-link' /></Link>
+                    <Link to='https://www.linkedin.com/in/tyler-randall-496828289' className='media-btn'><img src={LinkedinIcon} alt='linkedin-link' /></Link>
+                    <Link to='https://www.instagram.com/tyler7randall/' className='media-btn'><img src={InstagramIcon} alt='instagram-link' /></Link>
                 </div>
             </div>
         </footer>

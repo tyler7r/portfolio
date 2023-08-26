@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import './header.css'
 import MenuIcon from './images/three.svg'
@@ -13,14 +13,14 @@ export const Header = (props) => {
 
     useEffect(() => {
         setMenuOpen(false)
-    }, [])
+    }, [setMenuOpen])
 
     return (
         <>
             {mobileView === true &&
                 <header id='topnav'>
                     <Link to='/' id='header-name'>Tyler Randall</Link>
-                    <img src={MenuIcon} id='menu-icon' onClick={() => menuToggle()}/>
+                    <img src={MenuIcon} alt='menu-button' id='menu-icon' onClick={() => menuToggle()}/>
                     {menuOpen === true &&
                         <div className="overlay">
                             <div id='close-menu' onClick={() => menuToggle()}>X</div>

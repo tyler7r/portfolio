@@ -6,23 +6,23 @@ import Headshot from './images/trandall_profile.jpg'
 export const Home = (props) => {
     const [greeting, setGreeting] = useState('Hello');
 
-    const possibleGreetings = [
-        'Hello', 'Hola', 'Bonjour', 'Ciao', 'Olá', "G'day", 'Geia', 'Zdravo', 'Privet', 'Nǐ hǎo', "Kon’nichiwa", 'Guten tag'
-    ]
-
-    const randomGreeting = () => {
-        const randomNum = Math.floor(Math.random() * 12);
-        setGreeting(possibleGreetings[randomNum])
-    }
-
     useEffect(() => {
+        const possibleGreetings = [
+            'Hello', 'Hola', 'Bonjour', 'Ciao', 'Olá', "G'day", 'Geia', 'Zdravo', 'Privet', 'Nǐ hǎo', "Kon’nichiwa", 'Guten tag'
+        ]
+        
+        const randomGreeting = () => {
+            const randomNum = Math.floor(Math.random() * 12);
+            setGreeting(possibleGreetings[randomNum])
+        }
+
+        const cycleGreetings = () => {
+            randomGreeting();
+            setTimeout(cycleGreetings, 5000)
+        }
+
         cycleGreetings();
     }, [])
-
-    const cycleGreetings = () => {
-        randomGreeting();
-        setTimeout(cycleGreetings, 5000)
-    }
 
     return (
         <div id='homepage'>

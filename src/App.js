@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { Header } from './Header';
 import { Footer } from './Footer';
 import { Home } from './Home';
@@ -12,7 +12,7 @@ function App() {
   const [menuOpen, setMenuOpen] = useState(false)
 
   const handleResize = () => {
-    if (window.innerWidth >= 481) {
+    if (window.innerWidth >= 531) {
       setMobileView(false)
     } else {
       setMobileView(true);
@@ -24,7 +24,7 @@ function App() {
   }, [mobileView])
 
   useEffect(() => {
-    if (window.innerWidth <= 481) {
+    if (window.innerWidth <= 531) {
       setMobileView(true)
     }
   }, [])
