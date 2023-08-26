@@ -2,11 +2,15 @@
     display: flex;
     justify-content: space-between;
     margin: 8px 12px 0px 12px;
+    align-items: center;
 }
 
 #header-name {
     font-size: 32px;
     font-weight: bold;
+    text-decoration: none;
+    color: black;
+    cursor: pointer;
 }
 
 #desktop-links {
@@ -23,10 +27,81 @@
 }
 
 .desktop-link:hover {
-    color: orange;
+    color: #ffa500;
 }
 
 .desktop-link.border {
     border-right: 1px solid lightgray;
     padding-right: 8px;
+}
+
+#menu-icon {
+    height: 25px;
+    transition: filter 0.3s ease;
+}
+
+#menu-icon:hover {
+    cursor: pointer;
+    filter: invert(14%) sepia(100%) saturate(6318%) hue-rotate(333deg) brightness(99%) contrast(105%);
+}
+
+.overlay {
+    position: absolute;
+    background-color: #f3f3f3;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
+}
+
+#mobile-links {
+    display: flex;
+    flex-direction: column;
+    gap: 48px;
+    height: 100%;
+    width: 100%;
+    align-items: center;
+    justify-items: center;
+    text-align: center;
+}
+
+.mobile-link {
+    text-decoration: none;
+    font-size: 48px;
+    width: 80%;
+    color: black;
+    padding-bottom: 12px;
+}
+
+.mobile-link {
+    transition: border 0.5s ease;
+    border-bottom: 2px solid lightgray;
+}
+
+.mobile-link:hover {
+    border-bottom: 4px solid orange;
+}
+
+#close-menu {
+    align-self: flex-end;
+    margin: 12px 12px 0px 0px;
+    font-size: 32px;
+    transition: color 0.5s ease;
+}
+
+#close-menu:hover {
+    cursor: pointer;
+    color: red;
+}
+
+#logo-icon {
+    height: 50%;
+    width: 50%;
+    margin-bottom: 12px;
+    border: 2px solid lightgray;
 }

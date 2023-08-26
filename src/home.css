@@ -3,6 +3,7 @@ body {
     margin: 0;
     padding: 0;
     height: 100vh;
+    font-family: 'Libre Franklin';
 }
 
 .App {
@@ -40,26 +41,33 @@ body {
     font-size: 64px;
     font-weight: bold;
     margin-bottom: 18px;
+    font-family: 'Open Sans';
 }
 
 #about-me-description {
     font-weight: bold;
-    font-size: 18px;
+    font-size: 24px;
     margin-bottom: -8px;
+    font-family: 'Kanit';
 }
 
 #home-links-container {
-    display: flex;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
     gap: 12px;
-    justify-content: center;
+    height: 300px;
+    width: 100%;
+    justify-items: center;
+    align-items: center;
 }
 
 .home-link {
     text-decoration: none;
     border-radius: 50%;
     border: 1px solid black;
-    height: 130px;
-    width: 130px;
+    height: 100%;
+    max-height: 200px;
+    width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -74,17 +82,25 @@ body {
 }
 
 #contact-link {
-    background-color: rgb(222, 2, 222);
+    background-color: #de02de;
     transition: background-color 0.5s ease;
 }
 
 #projects-link {
-    background-color: rgb(255, 0, 89);
+    background-color: #ff0059;
     transition: background-color 0.5s ease;
 }
 
 #projects-link:hover, #contact-link:hover, #resume-link:hover {
     background-color: white;
+}
+
+#about-me-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
 }
 
 @media (max-width: 760px) {
@@ -93,20 +109,39 @@ body {
         justify-items: center;
     }
 
-    #home-info-container {
-        text-align: center;
+    #headshot {
+        grid-row: 3 / 4;
+        height: 100%;
+        width: 100%;
+    }
+}
+
+@media (max-width: 761px) and (min-width: 301px) {
+    #home-links-container {
+        grid-template-rows: 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
+        justify-items: center;
+        align-items: center;
     }
 
-    #headshot {
-        grid-row: 2 / 3;
-        height: 300px;
-        width: 300px;
+    #contact-link {
+        grid-column: 1 / 3;
+        width: 50%;
+        height: 100%;
     }
 }
 
 @media (min-width: 761px) {
     .App {
         min-width: 1000px;
+    }
+}
+
+@media (max-width: 300px) {
+    #home-links-container {
+        display: grid;
+        grid-template-rows: 1fr 1fr 1fr;
+        grid-template-columns: 1fr;
     }
 }
 

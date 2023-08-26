@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import './header.css'
 import MenuIcon from './images/three.svg'
+import LogoIcon from './images/site-logo.png'
 
 export const Header = (props) => {
     const { mobileView, setMenuOpen, menuOpen } = props
@@ -18,16 +19,18 @@ export const Header = (props) => {
         <>
             {mobileView === true &&
                 <header id='topnav'>
-                    <div id='header-name'>Tyler Randall</div>
-                    <img src={MenuIcon} onClick={() => menuToggle()}/>
+                    <Link to='/' id='header-name'>Tyler Randall</Link>
+                    <img src={MenuIcon} id='menu-icon' onClick={() => menuToggle()}/>
                     {menuOpen === true &&
                         <div className="overlay">
-                            <div id='mobile-links'>
-                                <Link className='mobile-link' to='/'>Home</Link>
-                                <Link className='mobile-link' to='/projects'>Projects</Link>
-                                <Link className='mobile-link' to='/resume'>Resume</Link>
+                            <div id='close-menu' onClick={() => menuToggle()}>X</div>
+                            <div id='mobile-links' onClick={() => menuToggle()}>
+                                <Link className='mobile-link border' to='/'>Home</Link>
+                                <Link className='mobile-link border' to='/projects'>Projects</Link>
+                                <Link className='mobile-link border' to='/resume'>Resume</Link>
                                 <Link className='mobile-link' to='/contact'>Contact</Link>
                             </div>
+                            <img src={LogoIcon} alt='logo-icon' id='logo-icon' />
                         </div>
                     }
                 </header>
