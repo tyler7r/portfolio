@@ -59,7 +59,7 @@ footer {
     }
 }
 
-@media (max-width: 325px) {
+@media (max-width: 346px) {
     footer {
         display: flex;
         flex-direction: column;

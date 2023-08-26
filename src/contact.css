@@ -5,6 +5,7 @@
     align-items: center;
     margin-top: 36px;
     gap: 18px;
+    text-align: center;
 }
 
 #contact-title {
@@ -54,4 +55,15 @@
 
 #email:hover, #phone:hover {
     background-color: white;
+}
+
+#contact-links-container {
+    display: flex;
+    gap: 16px;
+}
+
+@media (max-width: 400px) {
+    #contact-links-container {
+        flex-direction: column;
+    }
 }
